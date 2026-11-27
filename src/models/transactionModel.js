@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const transactionSchema = Schema(
+const transactionSchema = new Schema(
   {
     accountantId: {
       type: Schema.Types.ObjectId,
@@ -14,6 +14,10 @@ const transactionSchema = Schema(
     amount: {
       type: Number,
       required: [true, "Amount is required"],
+    },
+    updator: {
+      type: String,
+      default: "Creator",
     },
     memberName: {
       type: String,
@@ -37,4 +41,5 @@ const transactionSchema = Schema(
 );
 
 const TransactionModel = model("transaction", transactionSchema);
+
 module.exports = TransactionModel;
