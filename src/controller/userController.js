@@ -62,11 +62,11 @@ const getAllUsersByAdmin = async (req, res) => {
       password: 0,
     }).countDocuments();
 
-    if (!totalUser) {
-      return res.status(404).send({
-        message: "User not found",
-      });
-    }
+    // if (!totalUser) {
+    //   return res.status(404).send({
+    //     message: "User not found",
+    //   });
+    // }
 
     const totalPage = Math.ceil(totalUser / limit);
 
@@ -115,11 +115,11 @@ const getAllUsers = async (req, res) => {
 
     console.log(totalUser);
 
-    if (!totalUser) {
-      return res.status(404).send({
-        message: "User not found",
-      });
-    }
+    // if (!totalUser) {
+    //   return res.status(404).send({
+    //     message: "User not found",
+    //   });
+    // }
 
     const totalPage = Math.ceil(totalUser / limit);
 
